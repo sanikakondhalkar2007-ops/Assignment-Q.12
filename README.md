@@ -1,165 +1,150 @@
+Student Performance Management System
 
-Name: Sanika Ramdas Kondhalkar
-Class: Second Year AIDS
-Division: A
-Course: Object Oriented Programming Using C++
-Course Code: ADPC303
-Unit: II
+Student Details
 
-============================================================
-OBJECT-ORIENTED PROGRAMMING WITH C++
+Field| Details
+Student Name| Sanika Ramdas Kondhalkar 
+Roll No.| AD2169
+PRN| 125URA1102
+Class/Division| SY B.Tech AI & DS – Div A
+Course Name| Object-Oriented Programming with C++
+Unit| Unit 1 – Fundamentals of Object-Oriented Programming
 
-UNIT II: OBJECT-ORIENTED PROGRAMMING CONCEPTS
+---
 
-PRACTICAL CODE BOOK - README
+About the Program
+
+This C++ program demonstrates a Student Performance Management System using fundamental Object-Oriented Programming concepts.
+
+The program stores the roll number, name, and marks of three subjects for multiple students. It calculates the average marks of each student and determines their Pass/Fail result and Grade based on the average marks.
+
+The program demonstrates the use of class, objects, constructor, private data members, member functions, arrays, conditional statements, and loops.
+
+---
 
 Program: Student Performance Management System
-Language Standard: C++17 or later
 
-============================================================
-CONTENTS
+Description
 
-This program demonstrates the use of Object-Oriented
-Programming concepts in C++ through a Student Performance
-Management System.
+The program creates a "Student" class that contains student information such as:
 
-The program:
+- Roll number
+- Student name
+- Marks of three subjects
 
-1. Creates a Student class
-2. Stores student details
-3. Uses a constructor to initialize student data
-4. Stores marks using an array
-5. Calculates average marks
-6. Displays student performance
-7. Uses if-else statements for Pass/Fail
-8. Uses if-else-if statements for Grade
-9. Uses an array of Student objects
-10. Uses a for loop to process multiple students
+A constructor is used to initialize the student data.
 
-============================================================
-PROGRAM: STUDENT PERFORMANCE MANAGEMENT SYSTEM
+The "calculateAverage()" member function calculates the average of the three subject marks.
 
-------------------------------------------------------------
-CONCEPT
-------------------------------------------------------------
+The "displayResult()" member function displays the student's complete result, including:
 
-The Student Performance Management System is a C++ program
-that stores and displays the academic performance of students.
-
-The program uses a Student class to represent each student.
-
-Each student has:
-
-- Roll Number
+- Roll number
 - Name
-- Marks in three subjects
+- Marks
+- Average marks
+- Pass/Fail status
+- Grade
 
-The program calculates the average marks and determines
-whether the student has passed or failed.
+Three Student objects are created and stored in an array. A "for" loop is used to process and display the result of all three students.
 
-It also assigns a grade according to the average marks.
+---
 
-============================================================
-CLASS USED
-============================================================
+Concepts Used
 
-Class Name:
+The following C++ concepts are demonstrated in this program:
 
-Student
+- Class
+- Objects
+- Private data members
+- Public member functions
+- Constructor
+- Member functions
+- Array of objects
+- Array
+- Function
+- Function call
+- "if" statement
+- "if-else" statement
+- "else-if" ladder
+- "for" loop
+- Arithmetic operators
+- Relational operators
+- "cout"
+- "string"
+- Access specifiers
+- Object initialization
 
-The Student class contains data members and member functions
-required to manage student performance.
+---
 
-============================================================
-DATA MEMBERS
-============================================================
+Class: Student
 
-The class contains the following private data members:
+The program contains a class named "Student".
 
-1. int rollNo
+Data Members
 
-   Stores the roll number of the student.
+The following data members are declared as private:
 
-2. string name
-
-   Stores the name of the student.
-
-3. float marks[3]
-
-   Stores the marks of the student in three subjects.
-
-These data members are declared private to provide
-encapsulation and restrict direct access from outside
-the class.
-
-============================================================
-CONSTRUCTOR
-============================================================
-
-Constructor Name:
-
-Student()
-
-The parameterized constructor is used to initialize the
-student data when a Student object is created.
-
-Constructor parameters:
-
-- int r
-- string n
-- float m1
-- float m2
-- float m3
-
-Example:
-
-Student(1, "Sneha", 85, 90, 80);
-
-The constructor stores:
-
-Roll Number = 1
-Name = Sneha
-Marks = 85, 90, 80
-
-============================================================
-MEMBER FUNCTION 1: calculateAverage()
-============================================================
-
-Function:
-
-float calculateAverage()
+int rollNo;
+string name;
+float marks[3];
 
 Purpose:
 
-This function calculates the average marks of a student.
+- "rollNo" stores the student's roll number.
+- "name" stores the student's name.
+- "marks[3]" stores marks of three subjects.
+
+---
+
+Constructor
+
+The constructor is:
+
+Student(int r, string n, float m1, float m2, float m3)
+
+It is used to initialize the student's roll number, name, and three subject marks when the object is created.
+
+Example:
+
+Student(1, "Sneha", 85, 90, 80)
+
+This creates a student object with:
+
+- Roll Number = 1
+- Name = Sneha
+- Marks = 85, 90, 80
+
+---
+
+Member Function: calculateAverage()
+
+The function:
+
+float calculateAverage()
+
+calculates the average of three subject marks.
 
 Formula:
 
 Average = (Mark1 + Mark2 + Mark3) / 3
 
-Example:
+For example:
 
 Marks = 85, 90, 80
 
-Average:
+Average = (85 + 90 + 80) / 3
+        = 255 / 3
+        = 85
 
-(85 + 90 + 80) / 3
-= 255 / 3
-= 85
+---
 
-The function returns the calculated average.
+Member Function: displayResult()
 
-============================================================
-MEMBER FUNCTION 2: displayResult()
-============================================================
-
-Function:
+The function:
 
 void displayResult()
 
-Purpose:
-
-This function displays the complete result of the student.
+displays the complete result of the student.
 
 It displays:
 
@@ -167,194 +152,83 @@ It displays:
 - Name
 - Marks
 - Average
-- Pass/Fail Result
+- Result
 - Grade
 
-The function calls calculateAverage() to calculate the
-student's average marks.
+The function uses selection statements to determine whether the student has passed or failed and to assign the appropriate grade.
 
-============================================================
-PASS / FAIL LOGIC
-============================================================
+---
 
-The program uses an if-else statement to determine the
-student's result.
+Pass/Fail Logic
 
-Condition:
+The program uses the following condition:
 
-average >= 40
+if (average >= 40)
+    cout << "\nResult: PASS";
+else
+    cout << "\nResult: FAIL";
 
-If the condition is true:
+Rule:
 
-Result = PASS
+Average Marks| Result
+40 or above| PASS
+Below 40| FAIL
 
-If the condition is false:
+---
 
-Result = FAIL
+Grade Logic
 
-Example:
+The program uses an "if-else-if" ladder to determine the grade.
 
-Average = 70
+Average Marks| Grade
+90 or above| A+
+75 – 89.99| A
+60 – 74.99| B
+40 – 59.99| C
+Below 40| F
 
-Result = PASS
+---
 
-============================================================
-GRADE LOGIC
-============================================================
+Array of Objects
 
-The program assigns grades according to the average marks.
+Three Student objects are created using an array:
 
-Grade criteria:
+Student students[3] =
+{
+    Student(1, "Sneha", 85, 90, 80),
+    Student(2, "Ankita", 70, 75, 80),
+    Student(3, "Sarthak", 35, 40, 60)
+};
 
-Average >= 90
-Grade = A+
+The array stores three Student objects.
 
-Average >= 75
-Grade = A
+---
 
-Average >= 60
-Grade = B
+For Loop
 
-Average >= 40
-Grade = C
-
-Average < 40
-Grade = F
-
-The program uses an if-else-if ladder for grade selection.
-
-============================================================
-STUDENT OBJECT ARRAY
-============================================================
-
-The program creates an array containing three Student objects.
-
-Example:
-
-Student students[3]
-
-The three objects are:
-
-1. Sneha
-2. Ankita
-3. Sarthak
-
-Each object contains its own:
-
-- Roll Number
-- Name
-- Marks
-
-============================================================
-ITERATION USING FOR LOOP
-============================================================
-
-A for loop is used to process all three Student objects.
-
-Example:
+A "for" loop is used to process all three students:
 
 for (int i = 0; i < 3; i++)
 {
     students[i].displayResult();
 }
 
-The loop calls displayResult() for each student.
+The loop calls the "displayResult()" function for each Student object.
 
-Therefore, the result of all three students is displayed.
+---
 
-============================================================
-OOP CONCEPTS COVERED
-============================================================
+Sample Student Data
 
-1. CLASS
+Roll No.| Name| Marks| Average
+1| Sneha| 85, 90, 80| 85
+2| Ankita| 70, 75, 80| 75
+3| Sarthak| 35, 40, 60| 45
 
-The Student class acts as a blueprint for creating Student
-objects.
+---
 
-------------------------------------------------------------
+Expected Output
 
-2. OBJECT
-
-Objects are created from the Student class.
-
-Example:
-
-Student students[3];
-
-------------------------------------------------------------
-
-3. ENCAPSULATION
-
-Data members such as rollNo, name and marks are declared
-private and are accessed through member functions.
-
-------------------------------------------------------------
-
-4. CONSTRUCTOR
-
-The parameterized constructor initializes the Student object
-with roll number, name and marks.
-
-------------------------------------------------------------
-
-5. MEMBER FUNCTION
-
-Functions such as calculateAverage() and displayResult()
-are member functions of the Student class.
-
-------------------------------------------------------------
-
-6. ARRAY OF OBJECTS
-
-The program creates an array of Student objects to store
-information about multiple students.
-
-------------------------------------------------------------
-
-7. ABSTRACTION
-
-The calculation of average and display of results are
-implemented inside member functions so that the user does
-not need to know the internal calculation details.
-
-============================================================
-OTHER C++ CONCEPTS USED
-============================================================
-
-1. Data Types
-
-int, float and string are used to store different types
-of student information.
-
-2. Array
-
-The marks[3] array stores marks of three subjects.
-
-3. if-else
-
-Used to determine Pass or Fail.
-
-4. if-else-if ladder
-
-Used to determine the student's grade.
-
-5. for loop
-
-Used to process all Student objects.
-
-6. String
-
-The string data type is used to store the student's name.
-
-7. cout
-
-Used to display output on the screen.
-
-============================================================
-SAMPLE STUDENTS
-============================================================
-
-Student 1:
+===== Student Performance Management System =====
 
 Roll Number: 1
 Name: Sneha
@@ -363,20 +237,12 @@ Average: 85
 Result: PASS
 Grade: A
 
-------------------------------------------------------------
-
-Student 2:
-
 Roll Number: 2
 Name: Ankita
 Marks: 70, 75, 80
 Average: 75
 Result: PASS
 Grade: A
-
-------------------------------------------------------------
-
-Student 3:
 
 Roll Number: 3
 Name: Sarthak
@@ -385,141 +251,79 @@ Average: 45
 Result: PASS
 Grade: C
 
-============================================================
-IMPORTANT C++ KEYWORDS USED
-============================================================
+---
 
-#include <iostream>
+Working of the Program
 
-Includes the input/output stream library required for cout.
+Student 1
 
-------------------------------------------------------------
+Marks = 85, 90, 80
+Average = (85 + 90 + 80) / 3
+Average = 85
 
-#include <string>
+Since 85 is greater than or equal to 40:
 
-Includes the string library required for storing names.
+Result = PASS
 
-------------------------------------------------------------
+Since 85 is greater than or equal to 75:
 
-using namespace std;
+Grade = A
 
-Allows standard library names such as cout and string to be
-used without writing std::.
+Student 2
 
-------------------------------------------------------------
+Marks = 70, 75, 80
+Average = (70 + 75 + 80) / 3
+Average = 75
 
-class
+Therefore:
 
-Used to define the Student class.
+Result = PASS
+Grade = A
 
-------------------------------------------------------------
+Student 3
 
-private
+Marks = 35, 40, 60
+Average = (35 + 40 + 60) / 3
+Average = 45
 
-Restricts direct access to data members from outside the
-class.
+Therefore:
 
-------------------------------------------------------------
+Result = PASS
+Grade = C
 
-public
+---
 
-Allows member functions and constructors to be accessed
-according to the class access rules.
+Overall Concepts Covered
 
-------------------------------------------------------------
+This program covers the following important C++ concepts:
 
-if
-
-Used for conditional decision making.
-
-------------------------------------------------------------
-
-else
-
-Executes when the if condition is false.
-
-------------------------------------------------------------
-
-for
-
-Used to repeat a block of statements.
-
-------------------------------------------------------------
-
-return
-
-Returns a value from a function.
-
-============================================================
-HOW TO COMPILE
-============================================================
-
-Use a C++17-compatible compiler.
-
-Example using g++:
-
-g++ -std=c++17 Program_01.cpp -o Program_01
-
-============================================================
-HOW TO RUN
-============================================================
-
-On Windows:
-
-Program_01.exe
-
-On Linux/macOS:
-
-./Program_01
-
-============================================================
-HOW TO RUN IN VS CODE
-============================================================
-
-1. Open the .cpp file in Visual Studio Code.
-
-2. Open the Terminal.
-
-3. Compile the program:
-
-g++ -std=c++17 Program_01.cpp -o Program_01
-
-4. Run the program:
-
-.\Program_01.exe
-
-============================================================
-LEARNING OUTCOME
-============================================================
-
-After completing this program, students will understand:
-
-- Class and object
-- Encapsulation
+- C++ input/output
+- Variables
+- Data types
+- "string"
+- Arrays
+- Class
+- Objects
+- Private members
+- Public members
 - Constructor
 - Member functions
 - Array of objects
-- Arrays
-- Functions
-- if-else statements
-- if-else-if ladder
-- for loop
-- Data types
-- Basic Object-Oriented Programming concepts
+- Function calling
+- Arithmetic operations
+- Relational operators
+- "if-else"
+- "else-if" ladder
+- "for" loop
+- Object initialization
+- Object-oriented programming basics
 
-============================================================
-CONCLUSION
-============================================================
+---
 
-The Student Performance Management System demonstrates how
-C++ Object-Oriented Programming concepts can be used to
-organize and manage student information.
+Conclusion
 
-The program combines classes, objects, constructors,
-encapsulation, arrays, member functions, loops and
-conditional statements to calculate and display student
-performance.
+The Student Performance Management System provides a basic understanding of C++ and Object-Oriented Programming concepts.
 
-============================================================
-END OF README
-============================================================
+The program demonstrates how a class can be used to store student information and perform operations such as calculating average marks, determining Pass/Fail status, and assigning grades.
+
+It also demonstrates the practical use of constructors, objects, member functions, arrays, conditional statements, and loops in a C++ program.
